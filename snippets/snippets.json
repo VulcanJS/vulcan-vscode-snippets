@@ -1,0 +1,60 @@
+{
+  "addRoute": {
+    "prefix": "addRoute",
+    "body": [
+      "addRoute({ name: '${1}', path: '${2:/}', componentName: '${3}' });",
+      "${0}"
+    ],
+    "description": "Add a route with a registered component"
+  },
+  "addRouteComponent": {
+    "prefix": "addRouteComponent",
+    "body": [
+      "addRoute({ name: '${1}', path: '${2:/}', component: ${3} });",
+      "${0}"
+    ]
+  },
+  "createCollection": {
+    "prefix": "createCollection",
+    "body": [
+      "const ${1} = createCollection({",
+      "\tcollectionName: '${1}',",
+      "\ttypeName: '${2}',",
+      "\tschema: ${3},",
+      "\tresolvers: ${4},",
+      "\tmutations: ${5},",
+      "});",
+      "${0}"
+    ]
+  },
+  "createDefaultCollection": {
+    "prefix": "createDefaultCollection",
+    "body": [
+      "const ${1} = createCollection({",
+      "\tcollectionName: '${1}',",
+      "\ttypeName: '${2}',",
+      "\tschema: ${3},",
+      "\tresolvers: getDefaultResolvers({ typeName: '${2}' }),",
+      "\tmutations: getDefaultMutations({ typeName: '${2}' }),",
+      "});",
+      "${0}"
+    ]
+  },
+  "registerComponent": {
+    "prefix": "registerComponent",
+    "body": [
+      "registerComponent({ name: '${1}', component: ${2}, hocs: [${3}] });",
+      "${0}"
+    ]
+  },
+  "registerFragment": {
+    "prefix": "registerFragment",
+    "body": [
+      "registerFragment(`",
+      "\tfragment ${1} on ${2} {",
+      "\t\t${0}",
+      "\t}",
+      "`);"
+    ]
+  }
+}

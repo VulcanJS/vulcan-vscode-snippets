@@ -1,0 +1,20 @@
+{
+    "name": "vulcanjs-snippets",
+    "displayName": "vulcanjs-snippets",
+    "description": "Official snippets for the Vulcan.js framework",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
