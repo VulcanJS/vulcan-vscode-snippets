@@ -1,6 +1,6 @@
 {
     "name": "vulcanjs-snippets",
-    "displayName": "vulcanjs-snippets",
+    "displayName": "VulcanJS Snippets",
     "description": "Official snippets for the Vulcan.js framework",
     "version": "0.0.1",
     "engines": {
@@ -13,6 +13,10 @@
         "snippets": [
             {
                 "language": "javascript",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "javascriptreact",
                 "path": "./snippets/snippets.json"
             }
         ]

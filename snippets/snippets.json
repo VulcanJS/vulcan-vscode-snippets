@@ -12,7 +12,8 @@
     "body": [
       "addRoute({ name: '${1}', path: '${2:/}', component: ${3} });",
       "${0}"
-    ]
+    ],
+    "description": "Add a route with a direct component"
   },
   "createCollection": {
     "prefix": "createCollection",
@@ -25,36 +26,71 @@
       "\tmutations: ${5},",
       "});",
       "${0}"
-    ]
+    ],
+    "description": "Create a collection with custom queries & mutations"
   },
   "createDefaultCollection": {
     "prefix": "createDefaultCollection",
     "body": [
       "const ${1} = createCollection({",
       "\tcollectionName: '${1}',",
-      "\ttypeName: '${2}',",
+      "\ttypeName: '${2:Type}',",
       "\tschema: ${3},",
       "\tresolvers: getDefaultResolvers({ typeName: '${2}' }),",
       "\tmutations: getDefaultMutations({ typeName: '${2}' }),",
       "});",
       "${0}"
-    ]
+    ],
+    "description": "Create a collection with default queries & mutations"
   },
   "registerComponent": {
     "prefix": "registerComponent",
     "body": [
       "registerComponent({ name: '${1}', component: ${2}, hocs: [${3}] });",
       "${0}"
-    ]
+    ],
+    "description": "Register a new component"
   },
   "registerFragment": {
     "prefix": "registerFragment",
     "body": [
       "registerFragment(`",
-      "\tfragment ${1} on ${2} {",
+      "\tfragment ${1:Name} on ${2:Type} {",
       "\t\t${0}",
       "\t}",
       "`);"
-    ]
+    ],
+    "description": "Register a new fragment"
+  },
+  "newField": {
+    "prefix": "newField",
+    "body": [
+      "${1:fieldName}: {",
+      "\ttype: ${2:String},",
+      "\tlabel: '${1/(.*)/${1:/capitalize}/}',",
+      "\toptional: ${3:true},",
+      "\tcanRead: [${4}],",
+      "\tcanCreate: [${5}],",
+      "\tcanUpdate: [${6}],",
+      "},${0}"
+    ],
+    "description": "Insert a field inside a schema"
+  },
+  "addField": {
+    "prefix": "addField",
+    "body": [
+      ".addField({",
+      "\tfieldName: '${1}',",
+      "\tfieldSchema: {",
+      "\t\ttype: ${2:String},",
+      "\t\tlabel: '${1/(.*)/${1:/capitalize}/}',",
+      "\t\toptional: ${3:true},",
+      "\t\tcanRead: [${4}],",
+      "\t\tcanCreate: [${5}],",
+      "\t\tcanUpdate: [${6}],",
+      "\t},",
+      "},${0}"
+    ],
+    "description": "Extend an exisiting collection with a new field"
   }
 }
