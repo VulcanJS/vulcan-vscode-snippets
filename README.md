@@ -1,65 +1,123 @@
-# vulcanjs-snippets README
+# VulcanJS Snippets
 
-This is the README for your extension "vulcanjs-snippets". After writing up a brief description, we recommend including the following sections.
+The official Snippets extension for VulcanJS.
 
-## Features
+## Supported languages
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- JavaScript (.js)
+- JavaScript React (.jsx)
 
-For example if there is an image subfolder under your extension project workspace:
+Support for TypeScript and TypeScript React will be added when the core framework supports it.
 
-\!\[feature X\]\(images/feature-x.png\)
+## Supported snippets
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### `addRoute`
 
-## Requirements
+Add a route with a registered component
+```js
+addRoute({ name: '', path: '/path', componentName: '' });
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+```
+[Docs](http://docs.vulcanjs.org/routing.html#Adding-Routes)
 
-## Extension Settings
+### `addRouteComponent`
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Add a route with a direct component
+```js
+addRoute({ name: '', path: '/path', component:  });
 
-For example:
+```
+[Docs](http://docs.vulcanjs.org/routing.html#Adding-Routes)
 
-This extension contributes the following settings:
+### `createCollection`
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+Create a collection with custom queries & mutations
+```js
+const MyDocuments = createCollection({
+  collectionName: 'MyDocuments',
+  typeName: 'MyDocument',
+  schema: mySchema,
+  resolvers: myResolvers,
+  mutations: myMutations,
+});
 
-## Known Issues
+```
+[Docs](http://docs.vulcanjs.org/schemas.html#Creating-Collections)
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### `createDefaultCollection`
 
-## Release Notes
+Create a collection with default queries & mutations
+```js
+const MyDocuments = createCollection({
+  collectionName: 'MyDocuments',
+  typeName: 'MyDocument',
+  schema: mySchema,
+  resolvers: getDefaultResolvers('MyDocument'),
+  mutations: getDefaultMutations('MyDocument'),
+});
 
-Users appreciate release notes as you update your extension.
+```
+[Docs](http://docs.vulcanjs.org/schemas.html#Creating-Collections)
 
-### 1.0.0
+### `registerComponent`
 
-Initial release of ...
+Register a new component
+```js
+registerComponent({ name: 'MyComponent', component: MyComponent, hocs: [] });
 
-### 1.0.1
+```
+[Docs](http://docs.vulcanjs.org/theming.html#Registering-Components)
 
-Fixed issue #.
+### `registerFragment`
 
-### 1.1.0
+Register a new fragment
+```js
+registerFragment(`
+  fragment myFragment on MyType {
 
-Added features X, Y, and Z.
+  }
+`)
 
------------------------------------------------------------------------------------------------------------
+```
+[Docs](http://docs.vulcanjs.org/fragments.html#Registering-Fragments)
 
-## Working with Markdown
+### `newField`
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+Insert a field inside a schema
+```js
+myFieldName: {
+  type: String,
+  label: 'MyFieldName',
+  optional: true,
+  canRead: [],
+  canCreate: [],
+  canUpdate: [],
+},
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+```
+[Docs](http://docs.vulcanjs.org/schemas.html#Example)
 
-### For more information
+### `addField`
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Extend an exisiting collection with a new field
+```js
+.addField({
+  fieldName: 'myFieldName',
+  fieldSchema: {
+    type: String,
+    optional: true,
+    canRead: [],
+    canCreate: [],
+    canUpdate: [],
+  },
+});
 
-**Enjoy!**
+```
+[Docs](http://docs.vulcanjs.org/schemas.html#Extending-Schemas)
+
+### `importvulcancore`
+
+Create an import from meteor/vulcan:core
+```js
+import { } from 'meteor/vulcan:core';
+```

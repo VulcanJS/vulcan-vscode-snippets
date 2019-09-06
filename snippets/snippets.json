@@ -2,7 +2,7 @@
   "addRoute": {
     "prefix": "addRoute",
     "body": [
-      "addRoute({ name: '${1}', path: '${2:/}', componentName: '${3}' });",
+      "addRoute({ name: '${1}', path: '/${2:path}', componentName: '${3}' });",
       "${0}"
     ],
     "description": "Add a route with a registered component"
@@ -10,7 +10,7 @@
   "addRouteComponent": {
     "prefix": "addRouteComponent",
     "body": [
-      "addRoute({ name: '${1}', path: '${2:/}', component: ${3} });",
+      "addRoute({ name: '${1}', path: '/${2:path}', component: ${3} });",
       "${0}"
     ],
     "description": "Add a route with a direct component"
@@ -89,8 +89,13 @@
       "\t\tcanCreate: [${5}],",
       "\t\tcanUpdate: [${6}],",
       "\t},",
-      "},${0}"
+      "};",
+      "${0}"
     ],
     "description": "Extend an exisiting collection with a new field"
+  },
+  "importCore": {
+    "prefix": "importvulcancore",
+    "body": "import { ${0} } from 'meteor/vulcan:core';"
   }
 }
