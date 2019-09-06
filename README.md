@@ -13,25 +13,23 @@ Support for TypeScript and TypeScript React will be added when the core framewor
 
 ### `addRoute`
 
-Add a route with a registered component
+[Docs](http://docs.vulcanjs.org/routing.html#Adding-Routes) | Add a route with a registered component
 ```js
 addRoute({ name: '', path: '/path', componentName: '' });
 
 ```
-[Docs](http://docs.vulcanjs.org/routing.html#Adding-Routes)
 
 ### `addRouteComponent`
 
-Add a route with a direct component
+[Docs](http://docs.vulcanjs.org/routing.html#Adding-Routes) | Add a route with a direct component
 ```js
 addRoute({ name: '', path: '/path', component:  });
 
 ```
-[Docs](http://docs.vulcanjs.org/routing.html#Adding-Routes)
 
 ### `createCollection`
 
-Create a collection with custom queries & mutations
+[Docs](http://docs.vulcanjs.org/schemas.html#Creating-Collections) | Create a collection with custom queries & mutations
 ```js
 const MyDocuments = createCollection({
   collectionName: 'MyDocuments',
@@ -42,11 +40,10 @@ const MyDocuments = createCollection({
 });
 
 ```
-[Docs](http://docs.vulcanjs.org/schemas.html#Creating-Collections)
 
 ### `createDefaultCollection`
 
-Create a collection with default queries & mutations
+[Docs](http://docs.vulcanjs.org/schemas.html#Creating-Collections) | Create a collection with default queries & mutations
 ```js
 const MyDocuments = createCollection({
   collectionName: 'MyDocuments',
@@ -57,20 +54,18 @@ const MyDocuments = createCollection({
 });
 
 ```
-[Docs](http://docs.vulcanjs.org/schemas.html#Creating-Collections)
 
 ### `registerComponent`
 
-Register a new component
+[Docs](http://docs.vulcanjs.org/theming.html#Registering-Components) | Register a new component
 ```js
 registerComponent({ name: 'MyComponent', component: MyComponent, hocs: [] });
 
 ```
-[Docs](http://docs.vulcanjs.org/theming.html#Registering-Components)
 
 ### `registerFragment`
 
-Register a new fragment
+[Docs](http://docs.vulcanjs.org/fragments.html#Registering-Fragments) | Register a new fragment
 ```js
 registerFragment(`
   fragment myFragment on MyType {
@@ -79,11 +74,10 @@ registerFragment(`
 `)
 
 ```
-[Docs](http://docs.vulcanjs.org/fragments.html#Registering-Fragments)
 
 ### `newField`
 
-Insert a field inside a schema
+[Docs](http://docs.vulcanjs.org/schemas.html#Example) | Insert a field inside a schema
 ```js
 myFieldName: {
   type: String,
@@ -95,11 +89,10 @@ myFieldName: {
 },
 
 ```
-[Docs](http://docs.vulcanjs.org/schemas.html#Example)
 
 ### `addField`
 
-Extend an exisiting collection with a new field
+[Docs](http://docs.vulcanjs.org/schemas.html#Extending-Schemas) | Extend an exisiting collection with a new field
 ```js
 .addField({
   fieldName: 'myFieldName',
@@ -113,11 +106,11 @@ Extend an exisiting collection with a new field
 });
 
 ```
-[Docs](http://docs.vulcanjs.org/schemas.html#Extending-Schemas)
+
 
 ### `importvulcancore`
 
-Create an import from meteor/vulcan:core
+Create an import from `meteor/vulcan:core`
 ```js
 import { } from 'meteor/vulcan:core';
 ```
