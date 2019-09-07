@@ -89,7 +89,7 @@
       "\t\tcanCreate: [${5}],",
       "\t\tcanUpdate: [${6}],",
       "\t},",
-      "};",
+      "});",
       "${0}"
     ],
     "description": "Extend an exisiting collection with a new field"
