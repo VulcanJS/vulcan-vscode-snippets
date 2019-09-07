@@ -2,9 +2,9 @@
     "name": "vulcanjs-snippets",
     "displayName": "VulcanJS Snippets",
     "description": "Official snippets for the Vulcan.js framework",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "engines": {
-        "vscode": "^1.38.0"
+        "vscode": "0.10.x"
     },
     "categories": [
         "Snippets"
