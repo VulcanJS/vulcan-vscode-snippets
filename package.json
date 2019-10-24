@@ -2,6 +2,7 @@
     "name": "vulcanjs-snippets",
     "displayName": "VulcanJS Snippets",
     "description": "Official snippets for the Vulcan.js framework",
+    "icon": "images/icon.png",
     "version": "1.0.0",
     "engines": {
         "vscode": "0.10.x"
